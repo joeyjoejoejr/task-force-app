@@ -1,7 +1,7 @@
 import React from "react";
-import TaskForceApp from "./components/TaskForceApp.js";
+import Router from "react-router";
+import routes from "./config/routes";
 
-React.render(
-  <TaskForceApp />,
-  document.body
-)
+Router.run(routes, (Root, state) => {
+  React.render(<Root {...state} />, document.body);
+});
